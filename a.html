@@ -23,10 +23,10 @@
         // function test() {
         //     alert(document.getElementById('￼iframe').contentWindow); //contentWindow 可取得子窗口的 window 对象
         // }
-        window.name="我是来自a页面";
-        setTimeout(function(){
-            window.location='b.html';
-        },1000)
+        // window.name="我是来自a页面";
+        // setTimeout(function(){
+        //     window.location='b.html';
+        // },1000)
         // function getData() {
         //     var iframe = document.getElementById('proxy');
         //     iframe.onload = function () {
@@ -35,9 +35,15 @@
         //     }
         //     iframe.src = 'about:blank';
         // }
+        function onLoad() {
+            var iframe = document.getElementById('iframe');
+            var win = iframe.contentWindow;
+            win.postMessage("哈哈,我是来自页面a的消息", '*');
+        }
     </script>
-
-    <iframe id="proxy" src="http://www.cnblogs.com/data.html" style="display:none" onload="getData()"></iframe>
+    <iframe id="iframe" src="https://gaokaomim.github.io/kuayu/b.html" onload="onLoad()">
+    </iframe>
+    <!-- <iframe id="proxy" src="http://www.cnblogs.com/data.html" style="display:none" onload="getData()"></iframe> -->
 </body>
 
 </html>

@@ -52,7 +52,7 @@
 ***
 >  * CORS是指跨域资源共享是使用自定义的HTTP头部让游览器与服务器之间进行相互了解对方,从而决定请求或响应是应该成功还是失败,以降低跨域 HTTP 请求所带来的风险
 
-### <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS#浏览器兼容性">使用场景</a>
+  <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS#浏览器兼容性">使用场景</a>
 ***
 *  XMLHttpRequest 或 Fetch 发起的跨域 HTTP 请求
 *  Web 字体 (CSS 中通过 @font-face 使用跨域字体资源)
@@ -62,13 +62,13 @@
 *  样式表（使用 CSSOM）
 *  Scripts (未处理的异常)
 
-### 授权请求的方法,
+  授权请求的方法,
 > * GET
 > * HEAD
 > * POST
 > * DELETE 
 > * OPTIONS
-### 使用方法如下
+  使用方法如下
 > * 比如说，假如站点 http://foo.example 的网页应用想要访问 http://bar.other 的资源。http://foo.example 的网页中可能包含类似于下面的 JavaScript 代码   
 <pre>
         /** 使用方法如下 **/
@@ -133,3 +133,8 @@
  > * 3.数据类型：传递数据只能限于字符串，如果是对象或者其他会自动被转化为字符串
 
 ![icon_02.png](https://github.com/gaokaomim/kuayu/blob/master/image/icon_02.png)
+
+<h3>5.window.postMessage</h3>
+<pre>
+    window.postMessage方法是h5新引进的特性,可以使用它来向其它的window对象发送消息,不兼容低版本游览器
+</pre>

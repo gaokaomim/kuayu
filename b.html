@@ -11,7 +11,11 @@
 <body>
     <div>来自b页面上的代码</div>
     <script type="text/javascript">
-       alert(window.name)
+        //  alert(window.name)
+        window.onmessage = function (e) {
+            e = e || event;
+            alert(e.data);
+        }
     </script>
 </body>
 
