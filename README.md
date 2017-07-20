@@ -129,4 +129,7 @@
        alert(window.name)
     </script>
 </pre>
+
  > * 3.数据类型：传递数据只能限于字符串，如果是对象或者其他会自动被转化为字符串
+
+![icon_02.png](https://github.com/gaokaomim/kuayu/blob/master/image/icon_02.png)
