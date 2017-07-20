@@ -5,24 +5,15 @@
  据，或者通过js获取页面中不同域的框架中(iframe)的数据。只要协议、域名、端口有
  任何一个不同，都被当作是不同的域,它是由游览器的同源策略造成的,是游览器对
  JavaScript施加的安全限制。
-<table border="1" style="display:inline-table">
-<tr>
-  <th>
-  http://www.a.com/a.js
-  http://www.a.com/b.js    
-</th>
-  <td> 同一域名下   允许</td>
-</tr>
-<tr>
-  <th>电话</th>
-  <td>555 77 854</td>
-</tr>
-<tr>
-  <th>电话</th>
-  <td>555 77 855</td>
-</tr>
-</table>
 </pre>
 <h2>（2）如何解决</h2>
-<h3></h3>
-
+<h3>jsonp</h3>
+<pre>
+     /** 前端生成script标签，并将src中传入需要执行的callback **/
+     <script>
+        var script=document.createElement("script");
+        script.type="text/javascript"
+        script.src = "http://example.com?jsonp=cb";
+        document.body.appendChild(script);
+     </script>
+</pre>
