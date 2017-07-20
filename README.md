@@ -136,7 +136,10 @@
 
 <h3>5.window.postMessage</h3>
 <pre>
-    window.postMessage方法是h5新引进的特性,可以使用它来向其它的window对象发送消息,不兼容低版本游览器
+    window.postMessage方法是h5新引进的特性,可以使用它来向其它的window对象发送消息,不兼容低版本游览器,调用postMessage方法的window对象是指要接收消息的那一个window对象，该方法的第一个参数message为要
+发送的消息，类型只能为字符串；第二个参数targetOrigin用来限定接收消息的那个window对象所在的域，如果不想限定域，可以使用通配符 *  。需要接收消息的window对象，可是通过监听自身的message事件来获取传
+过来的消息，消息内容储存在该事件对象的data属性中。上面所说的向其他window对象发送消息，其实就是指一个页面有几个框架的那种情况，因为每一个框架都有一个window对象。在讨论第二种方法的时候，我们说过，不同域
+的框架间是可以获取到对方的window对象的，而且也可以使用window.postMessage这个方法。下面看一个简单的示例，有两个页面
 </pre>
 <pre>
 /**      代码如下  这个a页面上的代码    **/
