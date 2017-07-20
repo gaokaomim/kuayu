@@ -5,8 +5,10 @@
  据，或者通过js获取页面中不同域的框架中(iframe)的数据。只要协议、域名、端口有
  任何一个不同，都被当作是不同的域,它是由游览器的同源策略造成的,是游览器对
  JavaScript施加的安全限制。
-![icon_01.png](https://github.com/gaokaomim/kuayu/blob/master/image/icon_01.png)
 </pre>
+
+![icon_01.png](https://github.com/gaokaomim/kuayu/blob/master/image/icon_01.png)
+
 <h2>（2）如何解决</h2>
 ###JSONP
 <pre>
