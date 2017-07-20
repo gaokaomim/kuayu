@@ -5,6 +5,37 @@
  据，或者通过js获取页面中不同域的框架中(iframe)的数据。只要协议、域名、端口有
  任何一个不同，都被当作是不同的域,它是由游览器的同源策略造成的,是游览器对
  JavaScript施加的安全限制。
+<table border="1">
+<tr>
+  <td>
+   <p>这是一个段落。</p>
+   <p>这是另一个段落。</p>
+  </td>
+  <td>这个单元包含一个表格：
+   <table border="1">
+   <tr>
+     <td>A</td>
+     <td>B</td>
+   </tr>
+   <tr>
+     <td>C</td>
+     <td>D</td>
+   </tr>
+   </table>
+  </td>
+</tr>
+<tr>
+  <td>这个单元包含一个列表：
+   <ul>
+    <li>苹果</li>
+    <li>香蕉</li>
+    <li>菠萝</li>
+   </ul>
+  </td>
+  <td>HELLO</td>
+</tr>
+</table>
 </pre>
 <h2>（2）如何解决</h2>
+<h3></h3>
 
