@@ -7,32 +7,19 @@
  JavaScript施加的安全限制。
 <table border="1">
 <tr>
-  <td>
-   <p>这是一个段落。</p>
-   <p>这是另一个段落。</p>
-  </td>
-  <td>这个单元包含一个表格：
-   <table border="1">
-   <tr>
-     <td>A</td>
-     <td>B</td>
-   </tr>
-   <tr>
-     <td>C</td>
-     <td>D</td>
-   </tr>
-   </table>
-  </td>
+  <th>
+  http://www.a.com/a.js
+  http://www.a.com/b.js    
+</th>
+  <td> 同一域名下   允许</td>
 </tr>
 <tr>
-  <td>这个单元包含一个列表：
-   <ul>
-    <li>苹果</li>
-    <li>香蕉</li>
-    <li>菠萝</li>
-   </ul>
-  </td>
-  <td>HELLO</td>
+  <th>电话</th>
+  <td>555 77 854</td>
+</tr>
+<tr>
+  <th>电话</th>
+  <td>555 77 855</td>
 </tr>
 </table>
 </pre>
