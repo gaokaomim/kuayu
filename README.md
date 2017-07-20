@@ -62,10 +62,10 @@
 *  样式表（使用 CSSOM）
 *  Scripts (未处理的异常)
 
->  * 简单请求,使用方法如下
-   * GET
-   * HEAD
-   * POST
+  * 简单请求,使用方法如下
+> * GET
+> * HEAD
+> * POST
 > * 比如说，假如站点 http://foo.example 的网页应用想要访问 http://bar.other 的资源。http://foo.example 的网页中可能包含类似于下面的 JavaScript 代码   
 <pre>
         /** 使用方法如下 **/
