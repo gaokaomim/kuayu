@@ -100,12 +100,33 @@
 </pre>
 </pre>
 
-<h3>3.通过修改document.domain来跨子域</h3>
+<h3>3.通过修改document.domain来跨子域(这个方法有个问题)</h3>
 
 ***
 >  * 跨域分成两种，主要是基于游览器的同源策略限制,这个限制有两种情况,第一种不能通过ajax的方法去请求不同源中的文档,第二种游览器不同域的框架之间不能进行js交互操作,而document.domain是解决第二种情况,
 >  * 注意:在不同框架之间,是能够获取到彼此的window对象，但是不能获取到window对象里的属性和方法
 
+<h3>4.使用window.name来进行跨域</h3>
 
-   
-
+***
+>  * window对象有个name属性，该属性有个特征：即在一个窗口(window)的生命周期内,窗口载入的所有的页面都是共享一个window.name的，每个页面对window.name都有读写的权限，window.name是持久存在一个窗口载入过的所有页面中的，并不会因新页面的载入而进行重置。
+> * 兼容性：所有浏览器都支持;
+> * 优点:1.最简单的利用了浏览器的特性来做到不同域之间的数据传递;2.不需要前端和后端的特殊配制;
+> * 缺点:1.window.name的size有大小限制(大概在2M左右)2.安全性：当前页面所有window都可以修改，很不安全
+<pre>
+    <!--代码实现  -->
+    /**   a.html   **/
+    <script type="text/javascript">
+    window.name="我是来自a页面";
+        setTimeout(function(){
+            window.location='b.html';
+        },1000)
+    </script>
+</pre>
+<pre>
+    /**   b.html   **/
+    <script type="text/javascript">
+       alert(window.name)
+    </script>
+</pre>
+ > * 3.数据类型：传递数据只能限于字符串，如果是对象或者其他会自动被转化为字符串
