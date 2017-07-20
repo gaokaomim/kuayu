@@ -17,9 +17,9 @@
             var name = win.name; //这里同样获取不到window对象的name属性
         }
     </script> -->
-    <iframe id="iframe" src="http://example.com/b.html" onload="test()"></iframe>
+    <iframe id="iframe" src="https://gaokaomim.github.io/kuayu/b.html" onload="test()"></iframe>
     <script type="text/javascript">
-        document.domain = 'example.com'; //设置成主域
+        document.domain = 'gaokaomim.github.io'; //设置成主域
         function test() {
             alert(document.getElementById('￼iframe').contentWindow); //contentWindow 可取得子窗口的 window 对象
         }
