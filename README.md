@@ -48,10 +48,11 @@
    </script>
 </pre>
 <h3>2.CORS</h3>
+
 ***
 >  * CORS是指跨域资源共享是使用自定义的HTTP头部让游览器与服务器之间进行访问,从而决定请求或响应是应该成功还是失败,以降低跨域 HTTP 请求所带来的风险
 
-### 使用场景
+### <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS#浏览器兼容性">使用场景</a>
 ***
 *  XMLHttpRequest 或 Fetch 发起的跨域 HTTP 请求
 *  Web 字体 (CSS 中通过 @font-face 使用跨域字体资源)
