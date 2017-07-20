@@ -11,11 +11,13 @@
 <a href="https://segmentfault.com/a/1190000000718840#articleHeader1">参考地址</a>
 <h2>（2）如何解决</h2>
 <h3>1.JSONP</h3>
+
 ***
 >  * JSONP(JSON with Padding)是JSON的一种“使用模式”，可用于解决主流浏览器的跨域数据访问的问题
 >  * 兼容性：所有浏览器都兼容这种方式；
 >  * 优点：很明显前端可以很轻松的做到跨域请求；
 >  * 前端代码如下
+
 <pre>
      /** 前端生成script标签，并将src中传入需要执行的callback **/
      <script>
