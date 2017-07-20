@@ -85,7 +85,7 @@
 <pre>
   服务器端对于CORS的支持，主要就是通过设置Access-Control-Allow-Origin来进行的。如果浏览器检测到相应的设置，就可以允许Ajax进行跨域的访问。（<a href="http://www.cnblogs.com/sloong/p/cors.html">参考</a>）
   <pre>
-    /**   新增CORSFilter 类      **/
+    /**      新增CORSFilter 类      **/
     @Component
     public class CORSFilter extends OncePerRequestFilter {
         @Override
@@ -100,6 +100,12 @@
 </pre>
 </pre>
 
-     
+<h3>3.通过修改document.domain来跨子域</h3>
 
+***
+>  * 跨域分成两种，主要是基于游览器的同源策略限制,这个限制有两种情况,第一种不能通过ajax的方法去请求不同源中的文档,第二种游览器不同域的框架之间不能进行js交互操作,而document.domain是解决第二种情况,
+>  * 注意:在不同框架之间,是能够获取到彼此的window对象，但是不能获取到window对象里的属性和方法
+
+
+   
 
