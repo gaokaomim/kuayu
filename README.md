@@ -15,9 +15,9 @@
 ***
 >  * JSONP(JSON with Padding)是JSON的一种“使用模式”，可用于解决主流浏览器的跨域数据访问的问题
 >  * 原理:浏览器对XHR做了同源策略，可以利用 <script> 元素的这个开放策略来做到跨域请求的作用，网页可以得到从其他来源动态产生的 JSON 资料，而这种使用模式就是所谓的 JSONP(有可能是历史遗迹（漏洞）)
->  * 注意:JSONP只支持GET请求，不支持POST请求。
 >  * 兼容性：所有浏览器都兼容这种方式;
 >  * 优点：很明显前端可以很轻松的做到跨域请求;
+>  * 缺点:JSONP只支持GET请求，不支持POST请求,它只支持跨域HTTP请求这种情况，不能解决不同域的两个页面之间如何进行JavaScript调用的问题
 >  * 前端代码如下
 
 <pre>
@@ -29,14 +29,16 @@
         document.body.appendChild(script);
      </script>
 </pre>
-***
->  * 如果是使用jquery有封装好的$.getJSON方法可以使用
+ 
+>  * 如果是使用jquery有封装好的$.getJSON方法可以使用,jquery会自动生成一个全局函数来替换callback=?中的问号，之后获取到数据后又会自动销毁，实际上就是起一个临时代理函数的作用。$.getJSON方法会自动判断是否跨域，不跨域的话，就调用普通的ajax方法；跨域的话，则会以异步加载js文件的形式来调用jsonp的回调函数。
+
 <pre>
-     /**  jquery源码**/
+     /**  jquery源码  **/
    getJSON: function( url, data, callback ) {
 		return jQuery.get( url, data, callback, "json" );
 	},
 </pre>
+
 <pre>
      /** 使用方法如下 **/
    <script type="text/javascript">
@@ -45,3 +47,16 @@
     });
    </script>
 </pre>
+<h3>2.CORS</h3>
+***
+>  * CORS是指跨域资源共享是使用自定义的HTTP头部让游览器与服务器之间进行访问,从而决定请求或响应是应该成功还是失败,以降低跨域 HTTP 请求所带来的风险
+
+### 使用场景
+***
+*  XMLHttpRequest 或 Fetch 发起的跨域 HTTP 请求
+*  Web 字体 (CSS 中通过 @font-face 使用跨域字体资源)
+*  WebGL 贴图
+*  使用 drawImage 将 Images/video 画面绘制到 canvas
+*  vue-infinite-scroll
+*  样式表（使用 CSSOM）
+*  Scripts (未处理的异常)
