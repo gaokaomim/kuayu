@@ -29,3 +29,19 @@
         document.body.appendChild(script);
      </script>
 </pre>
+***
+>  * 如果是使用jquery有封装好的$.getJSON方法可以使用
+<pre>
+     /**  jquery源码**/
+   getJSON: function( url, data, callback ) {
+		return jQuery.get( url, data, callback, "json" );
+	},
+</pre>
+<pre>
+     /** 使用方法如下 **/
+   <script type="text/javascript">
+    $.getJSON('http://example.com/data.php?callback=?,function(jsondata)'){
+        //处理获得的json数据
+    });
+   </script>
+</pre>
