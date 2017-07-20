@@ -50,7 +50,7 @@
 <h3>2.CORS</h3>
 
 ***
->  * CORS是指跨域资源共享是使用自定义的HTTP头部让游览器与服务器之间进行访问,从而决定请求或响应是应该成功还是失败,以降低跨域 HTTP 请求所带来的风险
+>  * CORS是指跨域资源共享是使用自定义的HTTP头部让游览器与服务器之间进行相互了解对方,从而决定请求或响应是应该成功还是失败,以降低跨域 HTTP 请求所带来的风险
 
 ### <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS#浏览器兼容性">使用场景</a>
 ***
@@ -62,10 +62,13 @@
 *  样式表（使用 CSSOM）
 *  Scripts (未处理的异常)
 
-  * 简单请求,使用方法如下
+### 授权请求的方法,
 > * GET
 > * HEAD
 > * POST
+> * DELETE 
+> * OPTIONS
+### 使用方法如下
 > * 比如说，假如站点 http://foo.example 的网页应用想要访问 http://bar.other 的资源。http://foo.example 的网页中可能包含类似于下面的 JavaScript 代码   
 <pre>
         /** 使用方法如下 **/
@@ -78,6 +81,23 @@
             invocation.send(); 
         }
     }
+</pre>
+<pre>
+  服务器端对于CORS的支持，主要就是通过设置Access-Control-Allow-Origin来进行的。如果浏览器检测到相应的设置，就可以允许Ajax进行跨域的访问。（<a href="http://www.cnblogs.com/sloong/p/cors.html">参考</a>）
+  <pre>
+    /**   新增CORSFilter 类      **/
+    @Component
+    public class CORSFilter extends OncePerRequestFilter {
+        @Override
+        protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+            response.addHeader("Access-Control-Allow-Origin", "*");
+            response.addHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+            response.addHeader("Access-Control-Allow-Headers", "Content-Type");
+            response.addHeader("Access-Control-Max-Age", "1800");//30 min
+            filterChain.doFilter(request, response);
+        }
+    }
+</pre>
 </pre>
 
      
