@@ -138,3 +138,23 @@
 <pre>
     window.postMessage方法是h5新引进的特性,可以使用它来向其它的window对象发送消息,不兼容低版本游览器
 </pre>
+<pre>
+/**      代码如下  这个a页面上的代码    **/
+<script>
+       function onLoad() {
+            var iframe = document.getElementById('iframe');
+            var win = iframe.contentWindow;
+            win.postMessage("哈哈,我是来自页面a的消息", '*');
+        }
+</script>
+ <iframe id="iframe" src="https://gaokaomim.github.io/kuayu/b.html" onload="onLoad()">
+</pre>
+<pre>
+/**      代码如下  这个b页面上的代码    **/
+<script>
+        window.onmessage = function (e) {
+            e = e || event;
+            alert(e.data);
+        }
+</script> 
+</pre>
