@@ -6,7 +6,9 @@
  任何一个不同，都被当作是不同的域,它是由游览器的同源策略造成的,是游览器对
  JavaScript施加的安全限制。
 </pre>
-
+<pre>
+  没有跨域限制标签包括:<img src="xxx">  <link href="xxx"> <script src="xxx"></script>
+</pre>
 ![icon_01.png](https://github.com/gaokaomim/kuayu/blob/master/image/icon_01.png)
 <a href="https://segmentfault.com/a/1190000000718840#articleHeader1">参考地址</a>
 <h2>（2）如何解决</h2>
