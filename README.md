@@ -9,6 +9,7 @@
 <pre>
   没有跨域限制标签包括:<img src="xxx">  <link href="xxx"> <script src="xxx"></script>
 </pre>
+
 ![icon_01.png](https://github.com/gaokaomim/kuayu/blob/master/image/icon_01.png)
 <a href="https://segmentfault.com/a/1190000000718840#articleHeader1">参考地址</a>
 <h2>（2）如何解决</h2>
