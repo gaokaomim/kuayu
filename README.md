@@ -162,3 +162,16 @@
         }
 </script> 
 </pre>
+<h3>6.服务端</h3>
+<pre>
+  服务器端设置http header
+   @Override
+    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
+        ModelAndView modelAndView) throws Exception {
+        response.setHeader("Access-Control-Allow-Origin", "*");  //跨域请求处理
+        response.setHeader("Access-Control-Allow-Methods", "POST");
+        response.setHeader("Access-Control-Max-Age", "1000");
+        response.setContentType("text/html; charset=GBK");
+        //System.out.println(">>>MyInterceptor1>>>>>>>请求处理之后进行调用，但是在视图被渲染之前（Controller方法调用之后）");
+    }]
+</pre>
