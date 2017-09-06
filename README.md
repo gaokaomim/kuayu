@@ -5,10 +5,10 @@
  据，或者通过js获取页面中不同域的框架中(iframe)的数据。只要协议、域名、端口有
  任何一个不同，都被当作是不同的域,它是由游览器的同源策略造成的,是游览器对
  JavaScript施加的安全限制。
-   没有跨域限制标签包括:
-   <img src="xxx">  
-   <link href="xxx"> 
-   <script src="xxx">
+>  * 没有跨域限制标签包括:
+>  *   <img src="xxx">  
+>  *   <link href="xxx"> 
+>  *   <script src="xxx">
 </pre>
 
 ![icon_01.png](https://github.com/gaokaomim/kuayu/blob/master/image/icon_01.png)
